@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "./components/Navbar";
 import Searchbar from "./components/Searchbar";
 import MovieList from "./components/MovieList";
 import { getMoviesByTerm } from "./api/TMDB";
@@ -27,7 +26,6 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
       <Searchbar handleChange={handleChange} handleSubmit={handleSubmit} />
       <MovieList movies={movies} />
       {totalPages > 1 ? (

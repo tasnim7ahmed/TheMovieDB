@@ -1,5 +1,5 @@
 import react from "react";
-import { unstable_renderSubtreeIntoContainer } from "react-dom";
+import { Link } from "react-router-dom";
 
 const Movie = (props) => {
   const ImageURL = "https://image.tmdb.org/t/p/w500/" + props.data.poster_path;
@@ -25,7 +25,14 @@ const Movie = (props) => {
         </div>
         <div class="card-content">{props.data.release_date}</div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <Link
+            to={{
+              pathname: "/movie/" + props.data.id,
+              movie_id: props.data.id,
+            }}
+          >
+            See Details
+          </Link>
         </div>
       </div>
     </div>
